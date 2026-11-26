@@ -1,6 +1,0 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Random Jokes</title>
-<style>body{font-family:Arial;background:#fdf4ff;min-height:100vh;display:grid;place-items:center}.laugh-box{background:white;padding:30px;border-radius:15px;max-width:500px;text-align:center;box-shadow:0 5px 20px #0002}button{background:#c026d3;color:white;border:0;padding:12px 18px;border-radius:8px;cursor:pointer}</style></head><body><div class="laugh-box"><h1>😂 Random Joke</h1><p id="jokeLine">Click the button to get a joke.</p><button id="moreBtn">Get a Joke</button></div>
-<script>
-const joke=document.querySelector("#jokeLine");
-document.querySelector("#moreBtn").onclick=async()=>{joke.textContent="Loading...";try{const res=await fetch("https://official-joke-api.appspot.com/random_joke");if(!res.ok)throw new Error("API request failed");const data=await res.json();joke.textContent=`${data.setup} — ${data.punchline}`}catch(e){joke.textContent="Could not load a joke. Please try again."}};
-</script></body></html>
